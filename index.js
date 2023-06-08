@@ -1,6 +1,9 @@
 const controller = require('./app/controller')
+process.stdin.setEncoding('utf8');
 
-var search = "dom casmurro"
+console.log('\x1b[32mDigite uma pesquisa:\x1b[0m ');
+process.stdin.on('data', (data) => {
+    const search = data.trim();
 
 controller.extractTorrents(search).then(data => {
         if (!data.urls.length) {
@@ -18,13 +21,5 @@ controller.extractTorrents(search).then(data => {
         console.log("Total = ", i)
     }).catch(err => console.log(err))
 
-    
-
-
-
-
-
-
-
-
-
+    process.stdin.pause();
+});
