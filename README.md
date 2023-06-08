@@ -45,6 +45,9 @@ The output with no data found
 ```
 $ No data found 🥺
 ```
-
-
+## Web view app
+#### just run this another code
+```bash
+  $ node web.js
+```
 <p>This software is for educational purposes only.</p>

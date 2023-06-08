@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Search Results</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="container">
+      <form class="form-wrapper" action="/search" method="POST">
+        <h1>Search again</h1>
+        <input type="text" name="search" placeholder="search" required>
+        <button type="submit">▶️</button>
+      </form>
+    </div>
+    <h1>Search Results</h1>
+    <p>Total: <%= data.urls.length %>
+    </p>
+    <ul>
+      <% data.urls.forEach(item=> { %>
+        <li><a href="<%= item.uri %>">
+            <%= item.name %>
+          </a></li>
+        <% }); %>
+    </ul>
+  </div>
+</body>
+
+</html>
